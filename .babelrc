@@ -1,0 +1,17 @@
+{
+  "env": {
+    "test": {
+      "presets": [
+        ["env", {"targets": {"node": "current"}} ]
+      ]
+    },
+    "production" : {
+      "presets": [
+        ["@babel/env", { "modules": false } ]
+      ]
+    }
+  },
+
+  "plugins": [
+  ]
+}
