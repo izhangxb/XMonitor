@@ -102,6 +102,7 @@ https://www.w3.org/TR/resource-timing-2/
 ## 数据上报
 
 上报时机：页面加载完成
+
 上报方式：默认使用img标签发送get请求，同时支持自定义接口上报。
 
 
@@ -116,12 +117,12 @@ config: object,
 {
     url: string, 数据上报地址，这里设置为后端一张图片的地址，上报时，会将所有参数转为json字符串，再进行encode，作为queryparam
          拼接再url后面，格式如下：http://XXXX/XXX.png?param=XXXX, 后端在收到请求后，返回一张1*1的图片即可。
-    timeout: number, 单位毫秒。设置资源超时阈值，设置该值则只上报超时的资源
-    appId: string，区分不同的项目
+    timeout: number, 单位毫秒。资源超时阈值，设置该值则只上报超时的资源
+    appId: string，项目ID，区分不同的项目
 }
 ```
 
-callback: function, 传递该值，则表示自行上报;
+callback: function, 传递该参数，则表示自行上报;
 参数：
 ```
 data = {
